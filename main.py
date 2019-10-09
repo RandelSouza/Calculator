@@ -32,7 +32,6 @@ class Main(object):
         # Instanciar uma Calculadora.
         self.calculator = Calculator()
 
-    
     def showMenu_and_getOption(self):
         '''
         Método que tem a função de mostrar as opções disponíveis
@@ -53,8 +52,7 @@ class Main(object):
         else:
             if self.option != 6:
                 self.number1 = int(raw_input("Enter a number: "))
-                
-    
+                    
     def calculate_result(self, option):
         '''
         Calcula o resultado da expresão da opção escolhida.
@@ -62,20 +60,15 @@ class Main(object):
         result = 0
     
         if option == 1:
-            result = self.calculator.add(self.number1, self.number2)
-            
+            result = self.calculator.add(self.number1, self.number2)            
         elif self.option == 2:
             result = self.calculator.subtract(self.number1, self.number2)
-        
         elif self.option == 3:
             result = self.calculator.multiply(self.number1, self.number2)
-            
         elif self.option == 4:
             result = self.calculator.division(self.number1, self.number2)
-            
         elif self.option == 5:
             result = self.calculator.module(self.number1)        
-                
         else:      
             result = "Exit..."
             self.running = False        
@@ -90,8 +83,7 @@ class Main(object):
             print "\n{}.\n".format(self.calculate_result(option))
         else:
             print "\nThe result was {}.\n".format(self.calculate_result(option))
-        
-        
+                
     def treat_choice(self):        
         '''
         Mostra de forma transparente o resultado da oção.
@@ -117,7 +109,6 @@ class Main(object):
             self.showMenu_and_getOption()
             self.treat_option()
      
-        
 # Instanciando a classe Main
 main = Main()   
              
