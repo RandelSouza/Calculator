@@ -48,7 +48,7 @@ class Calculator(object):
     
     def module(self, number):
         '''
-        Método module, encarregado de retornar o modulode um número.
+        Método module, encarregado de retornar o modulo de um número.
         '''
         if number < 0:
             return number * -1
