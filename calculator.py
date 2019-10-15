@@ -54,3 +54,4 @@ class Calculator(object):
             return number * -1
         return number
 
+# add more functiona gere.
