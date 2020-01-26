@@ -49,11 +49,12 @@ class Calculator(object):
     
     def module(self, number):
         '''
-        Método module, encarregado de retornar o modulode um número.
+        Método module, encarregado de retornar o modulo de um número.
         '''
         if number < 0:
             return number * -1
         return number
+<<<<<<< HEAD
     
     def square_root(self, number):
         '''
@@ -61,3 +62,7 @@ class Calculator(object):
         '''
         return math.sqrt(number)
         
+=======
+
+# add more functiona gere.
+>>>>>>> 21b46f713ab592fdd9897b135d9da2241d0e1620
