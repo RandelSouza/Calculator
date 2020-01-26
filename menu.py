@@ -13,15 +13,20 @@ class Menu(object):
         '''
         Construtor da classe Menu.
         '''
-        pass
+        self.options = {
+                        "ADD" : 1,
+                        "SUBTRACT" : 2,
+                        "MULTIPLY" : 3,
+                        "DIVISION" : 4,
+                        "MODULE" : 5,
+                        "SQUARE ROOT" : 6,
+                        "EXIT" : 7
+                        }        
     
     def draw_menu(self):
         '''
         Método que mostra a lista de opções disponíveis.
-        '''
-        print "ADD - 1"
-        print "SUBTRACT - 2"
-        print "MULTIPLY - 3"
-        print "DIVISION - 4"        
-        print "MODULE - 5"
-        print "EXIT - 6"
+        '''        
+        
+        for key, value in sorted(self.options.items(), key=lambda x: x[1]):
+            print key," - ", value            

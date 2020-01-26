@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import math
 """
 Created on Wed Oct  9 00:51:06 2019
 
@@ -53,4 +54,10 @@ class Calculator(object):
         if number < 0:
             return number * -1
         return number
-
+    
+    def square_root(self, number):
+        '''
+        Método square_root, encarregado de retornar a raiz quadrada de um número.
+        '''
+        return math.sqrt(number)
+        

@@ -46,11 +46,11 @@ class Main(object):
         Se não for modulo obtem-se o number1 e number2.
         Caso contrario só o number1.
         '''
-        if self.option < 5:
+        if self.option < len(self.menu.options) - 2:
             self.number1 = int(raw_input("Enter first number: "))
             self.number2 = int(raw_input("Enter second number: "))
         else:
-            if self.option != 6:
+            if self.option !=  len(self.menu.options):
                 self.number1 = int(raw_input("Enter a number: "))
                     
     def calculate_result(self, option):
@@ -69,6 +69,8 @@ class Main(object):
             result = self.calculator.division(self.number1, self.number2)
         elif self.option == 5:
             result = self.calculator.module(self.number1)        
+        elif self.option == 6:
+            result = self.calculator.square_root(self.number1)        
         else:      
             result = "Exit..."
             self.running = False        
@@ -79,7 +81,7 @@ class Main(object):
         '''
         Mostra o resultado da expresão da opção escolhida (não é transparente).
         '''
-        if option == 6:
+        if option == len(self.menu.options):
             print "\n{}.\n".format(self.calculate_result(option))
         else:
             print "\nThe result was {}.\n".format(self.calculate_result(option))
