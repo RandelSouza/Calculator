@@ -32,6 +32,7 @@ class Calculator(object):
         self.add_function('square root', self.square_root, 1)
         self.add_function('power', self.power, 2)
         self.add_function('raise to the square', self.raise_to_the_square, 1)
+        self.add_function('fibonacci', self.fibonacci, 1)
         self.add_function('exit', False, 0)
         
     def add_function(self, name_function, function, number_params):    
@@ -89,3 +90,23 @@ class Calculator(object):
         Método raise to the square, encarregado de retornar o quadrado de um número.
         '''
         return numbers[0] ** 2
+    
+    def fibonacci(self, numbers):
+        '''
+        Método fibonacci, encarregado de retornar o número correspondente na sequência de fibonacci.
+        0 1 1 2 3 5 8
+        '''
+        penultimate = 0
+        last = 1       
+        current = 0        
+        n = numbers[0]
+        
+        if n == 1:
+            return n
+        
+        for i in range(n-1):
+            current = penultimate + last
+            penultimate = last
+            last = current                 
+        return current
+    

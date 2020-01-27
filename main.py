@@ -17,11 +17,8 @@ class Main(object):
         Método construtor da classe Main.
         '''
         # Estado do programa principal
-        self.running = True
-
-        # Inicializando number1 e number2
-        self.number1 = self.number2 = 0
-
+        self.running = True     
+        
         # Insanciar o Menu.
         self.menu = Menu()
         
@@ -33,8 +30,7 @@ class Main(object):
         while self.running:    
             self.menu.showMenu_and_getOption()           
             self.running = self.menu.treat_option()
-                
-     
+                     
 # Instanciando a classe Main
 main = Main()   
              
