@@ -15,12 +15,9 @@ class Main(object):
     def __init__(self):    
         '''
         Método construtor da classe Main.
-        '''
-        # Estado do programa principal
-        self.running = True     
-        
-        # Insanciar o Menu.
-        self.menu = Menu()
+        '''       
+        self.running = True # Estado do programa principal        
+        self.menu = Menu() # Instancia do Menu.
         
     def _run_(self):
         '''
