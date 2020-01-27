@@ -53,7 +53,7 @@ class Menu(object):
                     for quantity_params in range(function['number_params']):                        
                         self.params.append( int(raw_input("Enter the number{}: ".format(quantity_params + 1))))
                     return self.calculate_result(function, self.params)       
-        return False                                      
+        return None                                      
                                                              
     def calculate_result(self, function, params):
         '''
@@ -61,13 +61,13 @@ class Menu(object):
         '''
         if function['function'] != False:
             return function['function'](params)                    
-        return False
+        return None
     
     def show_result(self, result):
         '''
         Mostra o resultado da expresão da opção escolhida (não é transparente).
         '''
-        if  (result != False) or (result == 0):
+        if  (result != None or result == 0):
             print "\nThe result was {}.\n".format(result)     
             return True
         else:
