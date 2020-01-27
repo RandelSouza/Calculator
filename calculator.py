@@ -101,8 +101,7 @@ class Calculator(object):
         current = 0        
         n = numbers[0]
         
-        if n == 1:
-            return n
+        if n == 1: return n
         
         for i in range(n-1):
             current = penultimate + last
