@@ -31,6 +31,7 @@ class Calculator(object):
         self.add_function('module', self.module, 1)
         self.add_function('square root', self.square_root, 1)
         self.add_function('power', self.power, 2)
+        self.add_function('raise to the square', self.raise_to_the_square, 1)
         self.add_function('exit', False, 0)
         
     def add_function(self, name_function, function, number_params):    
@@ -83,4 +84,8 @@ class Calculator(object):
         '''
         return numbers[0] ** numbers[1]        
     
-    
+    def raise_to_the_square(self, numbers):
+        '''
+        Método raise to the square, encarregado de retornar o quadrado de um número.
+        '''
+        return numbers[0] ** 2
