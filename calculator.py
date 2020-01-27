@@ -18,45 +18,69 @@ class Calculator(object):
         '''
         Método construtor da classe calculator.
         Responsávél pela correta inicialização das variáveis, caso haja.
+        Ao adicionar novas funcionalidades, sempre adicionar a nova função
+        antes da função exit.
         '''
-        pass
-    
-    def add(self, number1, number2):        
+        self.functions = []
+        self.order = 0
+        
+        self.add_function('add', self.add, 2)
+        self.add_function('subtract', self.subtract, 2)
+        self.add_function('multiply', self.multiply, 2)
+        self.add_function('division', self.division, 2)
+        self.add_function('module', self.module, 1)
+        self.add_function('square root', self.square_root, 1)
+        self.add_function('power', self.power, 2)
+        self.add_function('exit', False, 0)
+        
+    def add_function(self, name_function, function, number_params):    
+        self.order += 1
+        self.functions.append({'name' : name_function, 'function' : function, 'order' : self.order, 'number_params' : number_params})        
+        
+    def add(self, numbers):        
         '''
         Método add, encarregado de retornar a soma de dois números.
         '''
-        return number1 + number2
+        return numbers[0] + numbers[1]
     
-    def subtract(self, number1, number2):
+    def subtract(self, numbers):
         '''
         Método subtract, encarregado de retornar a subtração de dois números.
         '''
-        return number1 - number2
+        return numbers[0] - numbers[1]
     
-    def multiply(self, number1, number2):
+    def multiply(self, numbers):
         '''
         Método multiply, encarregado de retornar a multiplicação de dois números.
         '''
-        return number1 * number2     
+        return numbers[0] * numbers[1]
     
-    def division(self, number1, number2):
+    def division(self, numbers):
         '''
         Método division, encarregado de retornar a divisão de dois números.
         '''        
-        if number1 == 0 or number2 == 0:
+        if numbers[0] == 0 or numbers[1] == 0:
             return 0
-        return number1 / number2
+        return numbers[0] / numbers[1]
     
-    def module(self, number):
+    def module(self, numbers):
         '''
         Método module, encarregado de retornar o modulo de um número.
         '''
-        if number < 0:
-            return number * -1
-        return number
+        if numbers[0] < 0:
+            return numbers[0] * -1
+        return numbers[0]
     
-    def square_root(self, number):
+    def square_root(self, numbers):
         '''
         Método square_root, encarregado de retornar a raiz quadrada de um número.
         '''
-        return math.sqrt(number)    
+        return math.sqrt(numbers[0])    
+    
+    def power(self, numbers):
+        '''
+        Método power, encarreado de retornar a potência de um número n1 elevado a outro número n2.        
+        '''
+        return numbers[0] ** numbers[1]        
+    
+    
